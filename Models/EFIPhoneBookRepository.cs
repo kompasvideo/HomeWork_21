@@ -35,7 +35,17 @@ namespace HomeWork_21.Models
             }
             else
             {
-                a
+                PhoneBook dbEntry = context.PhoneBooks
+                    .FirstOrDefault(p => p.PhoneBookID == phoneBook.PhoneBookID);
+                if (dbEntry != null)
+                {
+                    dbEntry.FirstName = phoneBook.FirstName;
+                    dbEntry.LastName = phoneBook.LastName;
+                    dbEntry.ThreeName = phoneBook.ThreeName;
+                    dbEntry.NumberPhone = phoneBook.NumberPhone;
+                    dbEntry.Address = phoneBook.Address;
+                    dbEntry.Description = phoneBook.Description;                    
+                }
             }
             context.SaveChanges();
         }

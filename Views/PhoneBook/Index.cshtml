@@ -33,8 +33,8 @@
                             Удалить
                         </button>
                     </form>
-                    <form id="@p.PhoneBookID" asp-action="DeleteRecord"
-                          asp-controller="PhoneBook" method="post" class="d-inline-flex pull-right" style="float:right">
+                    <form id="@p.PhoneBookID" asp-action="ViewEditRecord"
+                          asp-controller="Record" method="post" class="d-inline-flex pull-right" style="float:right">
                         <input type="hidden" name="id"
                                value="@p.PhoneBookID" />
                         <button type="submit"

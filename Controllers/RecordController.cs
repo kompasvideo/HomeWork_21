@@ -30,9 +30,11 @@ namespace HomeWork_21.Controllers
         {
             return View();
         }
-        public ViewResult AddRecord()
+        public ViewResult ViewEditRecord(int id)
         {
-            return View();
+            PhoneBook phoneBook = repository.PhoneBooks
+                .FirstOrDefault(p => p.PhoneBookID == id);
+            return View(phoneBook);
         }
     }
 }
